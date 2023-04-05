@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../_services/account.service';
-import { Observable, of } from 'rxjs';
-import { User } from '../_models/user';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -14,7 +12,7 @@ export class NavComponent implements OnInit{
 
   model: any = {}
 
-  constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) {
+  constructor(public accountService: AccountService, private router: Router) {
     
   }
   ngOnInit(): void {
