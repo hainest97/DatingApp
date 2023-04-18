@@ -1,0 +1,5 @@
+img.img-thumbnail {
+  height: 175px;
+  min-width: 175 !important;
+  margin-bottom: 2px;
+}

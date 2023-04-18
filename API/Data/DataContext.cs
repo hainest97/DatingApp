@@ -12,6 +12,7 @@ namespace API.Data
     public DataContext(DbContextOptions options) : base(options)
     {
     }
+    public DbSet<Photo> Photos { get; set; }
     public DbSet<UserLike> Likes { get; set; }
     public DbSet<Message> Messages { get; set; }
     public DbSet<Group> Groups { get; set; }
@@ -20,6 +21,9 @@ namespace API.Data
     protected override void OnModelCreating(ModelBuilder builder)
     {
       base.OnModelCreating(builder);
+
+      builder.Entity<Photo>()
+        .HasQueryFilter(p => p.IsApproved);
 
       builder.Entity<AppUser>()
         .HasMany(ur => ur.UserRoles)
